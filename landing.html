@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" /> 
+  <link rel="stylesheet" href="landing.css">
+  <title>landing-page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="landing.html"><img src="ZTLA7logo2.png" class="ztla7_logo"/></a>
+      <ul class="nav-links">
+        <li><a href="#about-us" class="about">About</a></li>
+        <li><a href="socials.html" class="socials">Socials</a></li>
+        <li><a href="feedback.html" class="feedback">Feedback</a></li>
+      </ul>
+       <button class="join_button">Join</button>
+    </nav> <div class="right-section">
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+    <div class="sidebar" id="sidebar">
+      <a href="#about-us">About</a>
+      <a href="socials.html">Socials</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <img src="ZTLA7backgroundlogo.png" alt="firstpicture" class="firstpicture"/> 
+    <h1 class="welcome_title">Welcome to ZTLA7 community</h1>
+     <div class="text_element">
+    <h3>
+      The ultimate hub for gamers and your new digital home!<br />
+      Our community is built by gamers for gamers. Our main goal is to connect, compete, share tips, and stay up to date in the latest gaming culture.<br />
+      Jump into the forums, join live events, or squad up with the members. You know... there's always something happening.<br />
+      Game on and much welcome to the community again!
+    </h3>
+  </div>
+  <div id="about-us"><h2 class="about_us">
+
+    About us 
+  </h2></div>
+  <h4 class="about_us_text">
+    Welcome to the heart of the gaming universe! We’re more than just a website — we’re a thriving digital arena built to empower every kind of gamer out there. Whether you’re a casual player looking for a good time or a hardcore competitor aiming for greatness, this is the place for you.<br><br> Go sign up now and unlock access to everything you need to improve your skills and rise to the top! Here, you’ll find detailed strategy guides for your favorite games, pro-level tips and tricks, walkthroughs, tier lists, and tutorials that help you level up faster and smarter. Looking for the meta builds or secret Easter eggs? We've got you covered. Want to dominate in ranked matches? Our community-tested tactics are ready to take you there. Join daily challenges, climb community leaderboards, and show off your progress as you earn achievements and trophies. We host live tournaments, exclusive game nights, and spotlight events where you can test your limits or just hang out and vibe with fellow gamers. Plus, our content is always fresh — news, patch notes, leaks, and insider scoops keep you updated 24/7. Whether you're on PC, console, or mobile, there’s a place for you here. We believe that every gamer has something to share and something to learn.<br><br> So jump in, squad up, share your clips, ask questions, make friends, and most importantly — have fun. The grind never stops, but at least now, you're grinding with the best. This is your digital home. Welcome to the team
+  </h4>
+  <h5></h5>
+    <div class="credit_element">
+    <p>Credit by : Yassen EH & Mouaad bmch v3</p>
+  </div>
+  </header>
+  </body>
+<script>
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const maxScroll = 2000; // how far until opacity reaches 0.4
+    let opacity = scrollTop / maxScroll;
+
+    // Clamp opacity between 0 and 0.4
+    opacity = Math.min(Math.max(opacity, 0), 0.4);
+
+    document.body.style.setProperty("--bg-opacity", opacity);
+    document.body.style.setProperty("opacity", "1"); // in case needed
+    document.body.style.setProperty("--scrollTop", scrollTop);
+    document.querySelector('body').style.setProperty('--before-opacity', opacity);
+
+    // Apply it directly (better than CSS variable for ::before)
+    document.querySelector("body").style.setProperty("--before-opacity", opacity);
+  });
+
+
+  function toggleMenu(el) {
+    el.classList.toggle("open");
+    document.getElementById("sidebar").classList.toggle("open");
+  }
+  // Auto-close sidebar on link click or outside click
+  document.addEventListener("click", function (e) {
+    const sidebar = document.getElementById("sidebar");
+    const toggle = document.querySelector(".menu-toggle");
+
+    // If clicking a link inside sidebar
+    if (e.target.closest(".sidebar a")) {
+      sidebar.classList.remove("open");
+      toggle.classList.remove("open");
+    }
+
+    // If click is outside the sidebar and toggle button, close
+    if (
+      !e.target.closest("#sidebar") &&
+      !e.target.closest(".menu-toggle")
+    ) {
+      sidebar.classList.remove("open");
+      toggle.classList.remove("open");
+    }
+  });
+    // Optional: Close on sidebar link click
+  document.querySelectorAll(".sidebar a").forEach(link =>
+    link.addEventListener("click", () => {
+      document.getElementById("sidebar").classList.remove("open");
+      document.querySelector(".menu-toggle").classList.remove("open");
+    })
+  );
+    // Handle scroll opacity for ::before
+ window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const maxScroll = 2000;
+  let opacity = scrollTop / maxScroll;
+  opacity = Math.min(Math.max(opacity, 0), 0.4);
+  document.body.style.setProperty("--bg-opacity", opacity);
+});
+
+</script>
