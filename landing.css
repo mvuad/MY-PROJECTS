@@ -1,0 +1,511 @@
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+html {
+  scroll-behavior: smooth;
+}
+.menu-toggle {
+  display: none;
+}
+/* Desktop - default style */
+@media(min-width:641px){
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  background-color: rgb(23, 22, 33);
+  height:max-content;
+
+  
+}
+body::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  background-image: url("ZTLA7logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 60px;
+  opacity: var(--bg-opacity, 0);
+  z-index: -1;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+}
+
+
+nav{
+  background-color: rgb(30, 32, 48 ,0.6);
+  box-shadow: 1px 1px 20px rgb(0, 0, 0);
+  display: flex;
+  position:fixed;
+  top:0;
+  width: 100%;
+  backdrop-filter: blur(12px);
+}
+.nav-links{
+  width:100%;
+  list-style: none;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  
+}
+nav li{
+  height: 52px;
+}
+.about{
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border-left: 1px solid rgb(60, 59, 65);
+}
+.about:hover{
+  background-color: rgb(30, 32, 48 ,0.5);
+  text-shadow: 2px 2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+.About:active{
+  background-color:  rgb(68, 72, 110);
+}
+.socials{
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border-left: 1px solid rgb(60, 59, 65);
+}
+.socials:hover{
+  background-color: rgb(30, 32, 48 ,0.5);
+  text-shadow: 2px 2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+  transform: scale(1.1);
+} 
+.socials:active{
+    background-color:  rgb(68, 72, 110);
+}
+.feedback{
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border-left: 1px solid rgb(60, 59, 65);
+  border-right: 1px solid rgb(60, 59, 65);
+  margin-right: 20px;
+}
+.feedback:hover{
+  background-color: rgb(30, 32, 48 ,0.5);
+  text-shadow: 2px 2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+.feedback:active{
+  background-color:  rgb(68, 72, 110);
+}
+.join_button{
+  width: 100px;
+  border-radius: 25px;
+  height:40px;
+  margin-top: 10px;
+  margin-right: 20px;
+  color:white;
+  background-color: rgb(29, 160, 29);
+  border: 2px solid rgb(20, 225, 54);
+  font-weight: bold;
+  transition: 0.3s;
+}
+.join_button:hover{
+  background-color: rgb(11, 196, 11);
+  cursor: pointer;
+  border: 2px solid rgb(11, 196, 11);
+  box-shadow: 2px 2px 30px rgb(11, 196, 11), -2px -2px 30px rgb(11, 196, 11);
+}
+.join_button:active{
+  background-color: rgb(159, 229, 159);
+  border: 2px solid rgb(19, 95, 32);
+  box-shadow: 2px 2px 30px rgb(19, 95, 32), -2px -2px 30px rgb(19, 95, 32);
+  color:rgb(0, 0, 0);
+}
+.firstpicture{
+  height: auto;
+  width:100%;
+  max-height: 500px;
+}
+.backgroundpicture{
+  width: 800px;
+  height:auto;
+  position: absolute;
+  top:650px;
+  left:50%;
+  transform: translate(-50%);
+  z-index: -1;
+  opacity: 0.4;
+
+}
+.welcome_title{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 70px;
+    font-family: 'VT323', monospace;
+         text-shadow:
+      0 0 5px rgb(149, 0, 255),
+      0 0 10px rgb(149, 0, 255),
+      0 0 20px rgb(149, 0, 255),
+      0 0 40px rgb(149, 0, 255);
+
+  }
+.text_element{
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 5%;
+    margin-right: 5%;
+    color:white;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    text-shadow:
+      0 0 5px rgb(81, 0, 255),
+      0 0 5px rgb(81, 0, 255),
+      0 0 20px rgb(78, 9, 226),
+      0 0 20px rgb(78, 9, 226);
+
+  }
+
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .about_us{
+    color: rgb(165, 164, 164);
+    font-size:40px;
+    margin-top: 120px;
+    text-align: center;
+  }
+  .about_us_text{
+    color:#ffffff;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size:20px;
+  }
+  
+  .credit_element{
+    color: #bcbcbc;
+    font-family: 'VT323', monospace;
+    text-align: center;
+    margin: 80px auto 15px;
+    border-top: 2px solid #bcbcbc;
+    font-size: 18px;
+    width:300px;
+    padding: 15px;
+  }
+
+.ztla7_logo{
+  height: 50px;
+  width: 90px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+}
+
+
+@media(max-width:640px){
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  background-color: rgb(23, 22, 33);
+  height:max-content;
+}
+body::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  background-image: url("ZTLA7logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 60px;
+  opacity: var(--bg-opacity, 0);
+  z-index: -1;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+}
+.right-section {
+  position:relative;
+  margin-left: auto;
+  margin-right: 65px;
+  display: flex;
+}
+
+/* HAMBURGER STYLES */
+.menu-toggle {
+  display:flex;
+  position: fixed;
+  top:25px;
+  right:24px;
+  z-index: 1101;
+  width: 30px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -220px;
+  width: 200px;
+  height: 100vh;
+  background-color: rgba(30, 32, 48, 0.5);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  transition: right 0.3s ease;
+  z-index: 10;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  transform: scale(1.1);
+  color: rgb(143, 108, 200);
+}
+.sidebar a:active {
+  transform: scale(1.1);
+  color: rgb(98, 71, 141);
+}
+
+nav{
+  background-color: rgb(30, 32, 48 ,0.6);
+  box-shadow: 1px 1px 20px rgb(0, 0, 0);
+  display: flex;
+  position:fixed;
+  top:0;
+  width: 100%;
+  backdrop-filter: blur(12px);
+}
+
+.nav-links{
+  width:100%;
+  list-style: none;
+  display:none;
+  justify-content:center;
+  align-items: center;
+  
+}
+nav li{
+  height: 52px;
+}
+.about{
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border-left: 1px solid rgb(60, 59, 65);
+}
+.about:hover{
+  background-color: rgb(30, 32, 48 ,0.5);
+  text-shadow: 2px 2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+.About:active{
+  background-color:  rgb(68, 72, 110);
+}
+.socials{
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border-left: 1px solid rgb(60, 59, 65);
+}
+.socials:hover{
+  background-color: rgb(30, 32, 48 ,0.5);
+  text-shadow: 2px 2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+  transform: scale(1.1);
+} 
+.socials:active{
+    background-color:  rgb(68, 72, 110);
+}
+.feedback{
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border-left: 1px solid rgb(60, 59, 65);
+  border-right: 1px solid rgb(60, 59, 65);
+  margin-right: 20px;
+}
+.feedback:hover{
+  background-color: rgb(30, 32, 48 ,0.5);
+  text-shadow: 2px 2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+.feedback:active{
+  background-color:  rgb(68, 72, 110);
+}
+.join_button{
+  width: 70px;
+  border-radius: 25px;
+  height:40px;
+  position:absolute;
+  top:17px;
+  right:80px;
+  color:white;
+  background-color: rgb(29, 160, 29);
+  border: 2px solid rgb(20, 225, 54);
+  font-weight: bold;
+  transition: 0.3s;
+}
+.join_button:hover{
+  background-color: rgb(11, 196, 11);
+  cursor: pointer;
+  border: 2px solid rgb(11, 196, 11);
+  box-shadow: 2px 2px 30px rgb(11, 196, 11), -2px -2px 30px rgb(11, 196, 11);
+}
+.join_button:active{
+  background-color: rgb(159, 229, 159);
+  border: 2px solid rgb(19, 95, 32);
+  box-shadow: 2px 2px 30px rgb(19, 95, 32), -2px -2px 30px rgb(19, 95, 32);
+  color:rgb(0, 0, 0);
+}
+.firstpicture{
+  height: auto;
+  width:100%;
+}
+.backgroundpicture{
+  width: 800px;
+  height:auto;
+  position: absolute;
+  top:650px;
+  left:50%;
+  transform: translate(-50%);
+  z-index: -1;
+  opacity: 0.4;
+
+}
+.welcome_title{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+    font-family: 'VT323', monospace;
+         text-shadow:
+      0 0 5px rgb(149, 0, 255),
+      0 0 10px rgb(149, 0, 255),
+      0 0 20px rgb(149, 0, 255),
+      0 0 40px rgb(149, 0, 255);
+
+  }
+.text_element{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color:white;
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    text-shadow:
+      0 0 5px rgb(81, 0, 255),
+      0 0 5px rgb(81, 0, 255),
+      0 0 20px rgb(78, 9, 226),
+      0 0 20px rgb(78, 9, 226);
+
+  }
+
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .about_us{
+    color: rgb(165, 164, 164);
+    font-size:30px;
+    margin-top: 80px;
+    text-align: center;
+  }
+  .about_us_text{
+    color:#ffffff;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size:14px;
+  }
+  
+  .credit_element{
+    color: #bcbcbc;
+    font-family: 'VT323', monospace;
+    text-align: center;
+    margin: 80px auto 15px;
+    border-top: 2px solid #bcbcbc;
+    font-size: 12px;
+    width:200px;
+    padding: 8px;
+  }
+
+.ztla7_logo{
+  height: 60px;
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 7px;
+}
+}
